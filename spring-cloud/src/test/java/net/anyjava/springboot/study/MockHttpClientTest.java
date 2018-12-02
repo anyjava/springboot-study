@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpStatus;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
@@ -32,5 +33,11 @@ public class MockHttpClientTest {
         assertThat(mockHttpClient).isNotNull();
 
         log.info(">> {}", mockHttpClient.getDelayedResponse(delaySecond));
+    }
+
+//    @Test(expected = FeignException.class) # ErrorDecoder 가 없다면 FeignException 발생
+    @Test(expected = IllegalArgumentException.class)
+    public void testInternalServerErrors() {
+        mockHttpClient.getStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
     }
 }

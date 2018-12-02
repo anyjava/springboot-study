@@ -12,5 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface MockHttpClient {
 
     @GetMapping("/delay/{second}")
-    String getDelayedResponse(@PathVariable("second") int delaySecond);
+    HttpBinResponse getDelayedResponse(@PathVariable("second") int delaySecond);
+
+    @GetMapping("/status/{code}")
+    String getStatusCode(@PathVariable("code") int statusCode);
 }

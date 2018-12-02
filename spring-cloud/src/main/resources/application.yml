@@ -7,4 +7,10 @@ feign:
       httpbin: # @FeignClient 에서 name 값, 전역으로 설정하려면 default
         connectTimeout: 5000
         readTimeout: 2000
-        loggerLevel: full
+        loggerLevel: FULL
+        errorDecoder: net.anyjava.springboot.study.FeignSampleErrorDecode
+
+logging:
+  level:
+    net.anyjava.springboot.study.MockHttpClient: DEBUG
+
