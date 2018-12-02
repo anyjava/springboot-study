@@ -1,5 +1,6 @@
 package net.anyjava.springboot.study;
 
+import feign.RetryableException;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,8 +19,16 @@ public class MockHttpClientTest {
     MockHttpClient mockHttpClient;
 
     @Test
-    public void test() {
+    public void testFeignClient() {
         final int delaySecond = 1;
+        assertThat(mockHttpClient).isNotNull();
+
+        log.info(">> {}", mockHttpClient.getDelayedResponse(delaySecond));
+    }
+
+    @Test(expected = RetryableException.class)
+    public void testFeignClient_TimeOutFail() {
+        final int delaySecond = 2;
         assertThat(mockHttpClient).isNotNull();
 
         log.info(">> {}", mockHttpClient.getDelayedResponse(delaySecond));
