@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '2.0.5.RELEASE'
+        springBootVersion = '2.1.0.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -36,8 +36,8 @@ subprojects {
 
     dependencies {
         runtime('org.springframework.boot:spring-boot-devtools')
-
-        compileOnly('org.projectlombok:lombok:1.18.2')
+        compile('org.projectlombok:lombok:1.18.2')
+        
         testCompile('org.springframework.boot:spring-boot-starter-test')
     }
 
