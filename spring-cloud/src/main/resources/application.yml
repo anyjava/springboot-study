@@ -1,8 +1,10 @@
 
+debug: true
+
 feign:
   client:
     config:
-      default:
+      articles:
         connectTimeout: 5000
         readTimeout: 5000
-        loggerLevel: basic
+        loggerLevel: full

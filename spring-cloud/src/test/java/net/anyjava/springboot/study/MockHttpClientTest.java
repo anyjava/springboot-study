@@ -12,15 +12,16 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class StoreClientTest {
+public class MockHttpClientTest {
 
     @Autowired
-    StoreClient storeClient;
+    MockHttpClient mockHttpClient;
 
     @Test
     public void test() {
-        assertThat(storeClient).isNotNull();
+        final int delaySecond = 1;
+        assertThat(mockHttpClient).isNotNull();
 
-        log.info(">> {}", storeClient.getArticles());
+        log.info(">> {}", mockHttpClient.getDelayedResponse(delaySecond));
     }
 }

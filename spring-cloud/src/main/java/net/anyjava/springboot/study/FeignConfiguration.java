@@ -17,6 +17,5 @@ public class FeignConfiguration {
     public Contract feignContract() {
         log.info("==================================anyjava");
         return new SpringMvcContract();
-//        return new Contract.Default();
     }
 }
