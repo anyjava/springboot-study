@@ -8,7 +8,7 @@ feign:
         connectTimeout: 5000
         readTimeout: 2000
         loggerLevel: FULL
-        errorDecoder: net.anyjava.springboot.study.FeignSampleErrorDecode
+        errorDecoder: net.anyjava.springboot.study.feign.FeignSampleErrorDecode
 
 logging:
   level:

@@ -1,4 +1,4 @@
-package net.anyjava.springboot.study;
+package net.anyjava.springboot.study.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

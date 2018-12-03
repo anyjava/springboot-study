@@ -1,4 +1,4 @@
-package net.anyjava.springboot.study;
+package net.anyjava.springboot.study.feign;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;

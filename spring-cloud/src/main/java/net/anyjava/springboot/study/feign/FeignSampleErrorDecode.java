@@ -1,4 +1,4 @@
-package net.anyjava.springboot.study;
+package net.anyjava.springboot.study.feign;
 
 import feign.Response;
 import feign.codec.ErrorDecoder;

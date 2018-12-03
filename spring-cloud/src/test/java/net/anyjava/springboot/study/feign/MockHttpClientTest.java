@@ -1,4 +1,4 @@
-package net.anyjava.springboot.study;
+package net.anyjava.springboot.study.feign;
 
 import feign.RetryableException;
 import lombok.extern.slf4j.Slf4j;
