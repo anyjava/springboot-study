@@ -1,8 +1,6 @@
 package net.anyjava.springboot.study.feign;
 
-import feign.Contract;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.cloud.openfeign.support.SpringMvcContract;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -11,10 +9,4 @@ import org.springframework.context.annotation.Configuration;
 @Slf4j
 @Configuration
 public class FeignConfiguration {
-
-//    @Bean
-    public Contract feignContract() {
-        log.info("==================================anyjava");
-        return new SpringMvcContract();
-    }
 }
