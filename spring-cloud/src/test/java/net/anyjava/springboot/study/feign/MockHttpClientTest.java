@@ -58,7 +58,9 @@ public class MockHttpClientTest {
 
         log.info("end = {}", count);
 
-        new ForkJoinPool(2).execute(() -> log.info("sdfas"));
+        new ForkJoinPool(2).execute(() -> Arrays.asList("a", "b", "c", "d").parallelStream()
+                .peek(v -> log.error(">> {}", v))
+                .collect(Collectors.toList()));
 
         aBean.test();
 
