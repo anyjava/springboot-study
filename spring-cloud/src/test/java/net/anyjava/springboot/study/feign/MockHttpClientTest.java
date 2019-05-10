@@ -34,6 +34,7 @@ public class MockHttpClientTest {
         log.info(">> {}", mockHttpClient.getDelayedResponse(delaySecond));
     }
 
+
     @Test(expected = RetryableException.class)
     public void testFeignClient_TimeOutFail() {
         final int delaySecond = 2;
@@ -42,40 +43,10 @@ public class MockHttpClientTest {
         log.info(">> {}", mockHttpClient.getDelayedResponse(delaySecond));
     }
 
-//    @Test(expected = FeignException.class) # ErrorDecoder 가 없다면 FeignException 발생
+    //    @Test(expected = FeignException.class) # ErrorDecoder 가 없다면 FeignException 발생
     @Test(expected = IllegalArgumentException.class)
     public void testInternalServerErrors() {
         mockHttpClient.getStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
     }
-
-    @Test
-    public void test() {
-        log.info("start");
-
-        int count = Arrays.asList("a", "b", "c", "d").parallelStream()
-                .peek(v -> log.error(">> {}", v))
-                .collect(Collectors.toList()).size();
-
-        log.info("end = {}", count);
-
-        new ForkJoinPool(2).execute(() -> Arrays.asList("a", "b", "c", "d").parallelStream()
-                .peek(v -> log.error(">> {}", v))
-                .collect(Collectors.toList()));
-
-        aBean.test();
-
-        assertThat(count).isGreaterThan(0);
-    }
-
-    @Autowired
-    private ABean aBean;
 }
 
-@Slf4j
-@Component
-class ABean {
-    @Async
-    public void test() {
-        log.info("async job");
-    }
-}
