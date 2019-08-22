@@ -2,3 +2,4 @@ rootProject.name = 'study'
 
 include 'spring-cloud'
 include 'spring-async-reactive'
+include 'spring-data-jpa'
