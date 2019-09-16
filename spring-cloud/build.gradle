@@ -1,7 +1,18 @@
 bootJar.enabled = true
 jar.enabled = false
 
+ext {
+    // https://spring.io/blog/2019/09/12/spring-cloud-greenwich-sr3-released
+    springCloudVersion = 'Greenwich.SR3'
+}
+
 dependencies {
     compile 'org.springframework.cloud:spring-cloud-starter-openfeign'
     compile 'org.springframework.boot:spring-boot-starter-web'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }

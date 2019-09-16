@@ -14,10 +14,6 @@ task wrapper(type: Wrapper) {
     gradleVersion = '4.9'
 }
 
-ext {
-    springCloudVersion = 'Finchley.SR1'
-}
-
 subprojects {
 
     apply plugin: 'java'
@@ -39,12 +35,6 @@ subprojects {
         compile('org.projectlombok:lombok:1.18.2')
         
         testCompile('org.springframework.boot:spring-boot-starter-test')
-    }
-
-    dependencyManagement {
-        imports {
-            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-        }
     }
 
 }
