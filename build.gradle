@@ -10,11 +10,10 @@ buildscript {
     }
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.9'
-}
-
 subprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
 
     apply plugin: 'java'
     apply plugin: 'eclipse'
@@ -32,8 +31,11 @@ subprojects {
 
     dependencies {
         runtime('org.springframework.boot:spring-boot-devtools')
-        compile('org.projectlombok:lombok:1.18.2')
-        
+        compile("org.springframework.boot:spring-boot-configuration-processor")
+        compile('org.projectlombok:lombok:1.18.10')
+        annotationProcessor('org.projectlombok:lombok:1.18.10')
+        testAnnotationProcessor('org.projectlombok:lombok:1.18.10')
+
         testCompile('org.springframework.boot:spring-boot-starter-test')
     }
 
