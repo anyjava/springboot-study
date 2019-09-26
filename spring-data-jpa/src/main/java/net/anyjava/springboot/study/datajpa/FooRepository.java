@@ -1,6 +1,7 @@
 package net.anyjava.springboot.study.datajpa;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.history.RevisionRepository;
 
-public interface FooRepository extends JpaRepository<FooDomain, Long> {
+public interface FooRepository extends JpaRepository<FooDomain, Long>, RevisionRepository<FooDomain, Long, Long> {
 }
