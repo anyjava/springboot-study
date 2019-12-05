@@ -3,7 +3,14 @@ jar.enabled = false
 
 ext {
     // https://spring.io/blog/2019/09/12/spring-cloud-greenwich-sr3-released
-    springCloudVersion = 'Greenwich.SR3'
+    springCloudVersion = 'Hoxton.RC2'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://repo.spring.io/milestone'
+    }
 }
 
 dependencies {

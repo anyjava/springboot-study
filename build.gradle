@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '2.1.4.RELEASE'
+        springBootVersion = '2.2.1.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -23,7 +23,8 @@ subprojects {
 
     group = 'net.anyjava.springboot'
     version = '0.0.1-SNAPSHOT'
-    sourceCompatibility = 1.8
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
 
     repositories {
         mavenCentral()
