@@ -4,6 +4,7 @@ jar.enabled = false
 dependencies {
     compile('org.springframework.boot:spring-boot-starter')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile 'javax.validation:validation-api:2.0.0.Final'
 
     // https://github.com/ppodgorsek/spring-test-dbunit/releases
     testImplementation 'com.github.anyjava.spring-boot-dbunit:spring-boot-dbunit-starter:67f5c2d2ae'
